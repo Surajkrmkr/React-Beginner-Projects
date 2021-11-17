@@ -1,0 +1,68 @@
+.App {
+  text-align: center;
+  background-color: #2e002c;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0px;
+  color: #fff;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(240, 236, 236, 0.18);
+  min-height: 20vh;
+  width: 700px;
+  z-index: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(225, 0, 255, 0.384);
+  position: absolute;
+}
+
+.c1 {
+  top: 2%;
+  left: 30%;
+}
+
+.c2 {
+  bottom: 2%;
+  right: 28%;
+}
+
+button {
+  background-color: rgba(225, 0, 255, 0.384);
+  border: none;
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  font-size: 30px;
+  padding-top: 3px;
+}
+
+button:hover {
+  background-color: rgba(225, 0, 255, 0.384);
+  border: none;
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  font-size: 30px;
+  padding-top: 3px;
+  transform: scale(1.1);
+  transition: ease-in-out 0.2s;
+}
