@@ -8,12 +8,6 @@ const Container = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         let amount = parseInt(count);
-        if (count <= 0) {
-          amount = 1;
-        }
-        if (count > 8) {
-          amount = 8;
-        }
         setText(data.slice(0, amount));
       };
 
@@ -22,7 +16,7 @@ const Container = () => {
             <h1>Tired being searching Lorem Ipsum?</h1>
             <div className="input-section">
                 <label htmlFor="count-input">No of Para</label>
-                <input type="number" name="count-input" className="count-input" value={count} onChange={(e)=>setCount(e.target.value)} />
+                <input type="number" max="8" min="0" name="count-input" className="count-input" value={count} onChange={(e)=>setCount(e.target.value)} />
                 <button className="btn">Generate</button>
             </div>
             <div className="lorem container" >
