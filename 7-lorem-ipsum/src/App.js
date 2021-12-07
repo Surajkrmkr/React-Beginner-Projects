@@ -8,8 +8,8 @@ function App() {
     <div>
       <div className="App">
         <Container />
-        <div className="circle c1" />
-        <div className="circle c2" />
+        {/* <div className="circle c1" />
+        <div className="circle c2" /> */}
       </div>
     </div>
   );
