@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+:root {
+  --bgColor: rgb(240, 215, 250);
+  --accentColor: rgba(122, 12, 224, 0.973);
+  --textColor: rgba(0, 0, 0, 0.747);
+}
+
+* {
+  font-family: "Baloo Bhaijaan 2", cursive;
+  padding: 0;
+  margin: 0;
+}
+
+.header-bg {
+  text-align: center;
+  background-color: var(--bgColor);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: row;
+  padding: 40px 100px;
+  background-color: var(--bgColor);
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  .title {
+    margin-bottom: 20px;
+  }
+}
+
+.input-section {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  justify-content: center;
+}
+
+.title {
+  font-size: 35px;
+  font-weight: bolder;
+  color: var(--textColor);
+}
+
+.input-color {
+  border: none;
+  padding: 10px 10px;
+  background-color: rgba(137, 43, 226, 0.164);
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+.input-color:focus {
+  outline: none;
+}
+
+.btn {
+  border: none;
+  padding: 10px 10px;
+  background-color: var(--accentColor);
+  border-radius: 5px;
+  margin-left: 20px;
+  color: white;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.color-palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.single-color {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.single-color:hover {
+  transform: scale(1.1);
+  transition: ease-in-out 0.4s;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.13);
+}
+
+.darker {
+  color: white;
+}
+
+.alert-row {
+  background-color: rgb(255, 184, 184);
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert-row span {
+  margin-left: 15px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--textColor);
+  cursor: pointer;
+}
+
+.copy-btn {
+  border: none;
+  padding: 5px 5px;
+  background-color: var(--accentColor);
+  border-radius: 5px;
+  color: white;
+  font-size: medium;
+  cursor: pointer;
+}
