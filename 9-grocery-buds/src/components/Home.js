@@ -2,12 +2,24 @@ import react from 'react';
 import List from './List.js';
 import { useState, useEffect } from 'react';
 
+const getLocalStorage = () => {
+    let localList = localStorage.getItem('list');
+    if (localList) {
+        return (localList = JSON.parse(localStorage.getItem('list')));
+    }
+    else {
+        return [];
+    }
+}
+
 const Home = () => {
     const [data, setData] = useState('');
-    const [list, setList] = useState([]);
+    const [list, setList] = useState(getLocalStorage());
     const [alert, setAlert] = useState({ status: false, message: '', type: '' });
     const [isEditing, setIsEditing] = useState(false);
     const [editItemId, setEditItemId] = useState(null);
+
+
 
     const addItemToList = (e) => {
         e.preventDefault();
@@ -36,9 +48,9 @@ const Home = () => {
         }
     }
 
-    const deleteItem = (id) =>{
+    const deleteItem = (id) => {
         setList(
-            list.filter((item)=>{
+            list.filter((item) => {
                 return item.id != id;
             })
         );
@@ -58,6 +70,10 @@ const Home = () => {
         return () => clearTimeout(timeOut);
     }, [alert])
 
+    useEffect(() => {
+        localStorage.setItem('list', JSON.stringify(list));
+    }, [list])
+
     const setAlertMessage = (status, message, type) => {
         setAlert({ status, message, type });
     }
@@ -72,9 +88,9 @@ const Home = () => {
             </form>
             {/* {list.length != 0 && <h2 className="list-info">List goes here :</h2>} */}
             <ol className="list-section">
-                <List list={list} editItem={editItem} deleteItem={deleteItem}/>
+                <List list={list} editItem={editItem} deleteItem={deleteItem} />
             </ol>
-            {list.length != 0 && <button onClick={()=>{
+            {list.length != 0 && <button onClick={() => {
                 setList([]);
                 setAlertMessage(true, 'List cleared', 'success');
             }} className="btn-clr">Clear list</button>}
